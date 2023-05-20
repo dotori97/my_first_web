@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+    <head>
+        <title>HTML요소: 리스트, 이미지, 하이퍼링크, 테이블</title>
+        <meta charset="utf-8">
+        <style>
+            h1{
+                font-size:30px;
+                text-align:center;
+            }
+            td{text-align: center}
+            .subject{background-color: lightblue}
+            .score{background-color: lightyellow}
+            .average{background-color: lightgreen}
+        </style>            
+    </head>
+    <body>
+        <h1>HTML요소: 리스트, 이미지, 하이퍼링크, 테이블</h1>
+        <h2>1. 리스트</h2>
+        <h3>(1) Unordered List</h3>
+        &#x261e; 순서 없는 리스트를 지정<br>
+        &#x261e; ul ~ li
+        <h3>(2) Ordered List</h3>
+        &#x261e; 순서 있는 리스트를 지정<br>
+        &#x261e; ol ~ li<br>
+        &#x261e; <strong>속성</strong><br> 
+        &rarr; 순서가 부여된 기호의 유형 지정 (type="값")<br>
+        &rarr; 항목의 시작 번호 지정 (start="숫자")<br>
+        &rarr; 항목 번호를 역순으로 지정 (reversed)
+        <h3>(3) Description List</h3>
+        &#x261e; 서술 리스트를 지정<br>
+        &#x261e; dl ~ dt/dd<br>
+        &#x261e; dt요소 &rarr; 용어나 이름을 나열. 자동 줄바꿈<br>
+        &#x261e; dd요소 &rarr; 용어나 이름에 대한 설명을 제공할 때 사용. 자동 줄바꿈, 들여쓰기
+        <h3>(4) ul, ol 내에서 사용되는 자식요소 li</h3>
+        &#x261e; 들여쓰기, 자동 줄바꿈, 종료태그 없이 사용가능<br>
+        &#x261e; <strong>속성</strong> &rarr; 항목 번호를 중간에 바꿀 때 사용 (value="숫자")
+
+        <h2>2. 이미지</h2>
+        <h3>이미지를 삽입하는 img요소&#x2661; </h3>
+        &#x261e; 이미지는 인라인 요소<br>
+        &#x261e; <strong>속성</strong><br>
+        &rarr; src="파일의 URL" (이미지 파일 경로)<br>
+        &rarr; width="숫자" (픽셀, %)<br>
+        &rarr; height="숫자" (픽셀, %)<br>
+        &rarr; alt="텍스트" (이미지가 표시되지 않을 때 대체 표시될 텍스트)<br>
+        &rarr; usemap="#맵이름" (클라이언트 측의 이미지맵)
+        
+        <h2>3. 하이퍼링크</h2>
+        <h3>(1) 하이퍼링크를 삽입하는 a 요소</h3>
+        &#xe61e; <strong>기본 형식</strong><br> 
+        '<'a href="이동할 위치"'>' 링크를 걸어줄 내용물(텍스트,이미지) '<'/a'>'<br>
+        &#xe61e; <strong>속성</strong><br>
+        &rarr; href="URL"<br>
+        &rarr; target="창이름"(_blank, _self)<br>
+        &rarr; download 
+        <h3>(2) id 속성을 활용한 특정 위치로의 이동</h3>
+        동일한 페이지 또는 다른 페이지에서 특정 위치로 이동하는 경우<br><br>
+        <b>링크부분</b><br>
+        &#x261e; 같은 페이지 내에서 이동하는 경우 &rarr; '<'a href=<strong>#</strong>이동할 특정 위치의 이름"'>' 내용 '<'/a'>'<br>
+        &#x261e; 다른 페이지의 특정 위치로 이동하는 경우 &rarr; '<'a href="<strong>페이지경로#</strong>이동할 특정 위치의 이름"'>' 내용 '<'/a'>'<br><br>
+        <b>이동할 특정 위치</b><br>
+        &#x261e; '<'a <strong>id</strong> ="이동할 특정 위치의 이름"'>' 내용 '<'/a'>'<br>
+        <h3>(3) 이미지맵</h3>
+        &#x261e; 하나의 이미지를 여러 개의 영역으로 나누어 각 영역마다 링크를 지정하는 것<br>
+        '<'img src="URL" <b>usemap</b>="<b>#</b>맵이름"'>'<br>
+        <p>'<'map <b>name</b>="맵이름"'>'<br>
+            '<'<b>area</b><br>
+            &nbsp; &nbsp; shape="이미지맵에서 각 영역의 모양(default, rect, circle, poly)"<br> 
+            &nbsp; &nbsp; coords="각 영역을 구성하는 좌표값"<br>
+            &nbsp; &nbsp; href="URL"<br>
+            &nbsp; &nbsp; target="링크된 내용이 열릴 창"<br>
+            &nbsp; &nbsp; download="href로 지정된 파일을 다운로드"<br>
+            &nbsp; &nbsp; alt="대체 텍스트 내용"'>'<br>
+            <!--영역의 개수만큼 area 요소를 반복 사용-->
+        '<'/map'>'</p>
+
+        &#xe61e; 예시<br>
+        <img src="light.png" width="400" usemap="#knou">
+        <map name="knou">
+            <area shape="rect" coords="5,5,100,50"
+                href="http://www.google.com"
+                title="구글" target="_blank">
+            <area shape="circle" coords="100,100,50"
+                href="http://www.naver.com"
+                title="네이버" target="_blank">
+            <area shape="poly" 
+                coords="100,50,230,40,250,150"
+                href="http://wwww.daum.net"
+                title="다음" target="_blank"        
+        </map>
+
+        <h3>(4) 새로운 창을 삽입하는 iframe 요소</h3>
+        &#xe61e; 현재 웹 페이지 안에서 다른 웹 페이즈를 표시하는 창을 삽입할 때 사용<br>
+        &#xe61e; <b>속성</b><br>
+        &rarr; name="이름" (창의 이름. target 속성 값으로 사용)<br>
+        &rarr; src="URL"<br>
+        &rarr; srcdoc="HTML코드"<br>
+        &rarr; width="폭"<br>
+        &rarr; height="높이"<br>
+
+       <p>&#xe61e; 예시 <br>
+        <a href="http:/www.knou.ac.kr" target="view">방송대</a>&nbsp;&nbsp;
+        <a href="http://cs.knou.ac.kr" target="view"> 컴퓨터과학과</a>&nbsp;&nbsp;
+        <a href="http://csgrad.knou.ac.kr" target="view">정보과학과 대학원</a><br/><br/>
+        <hr><br/>
+        <iframe 
+            src="http://www.knou.ac.kr" name="view"
+            width="600" height="300"
+            <!--srcdoc="현재 웹페이지 내에서 다른 웹페이지를 표시하기 위해 iframe 요소로 만든 창입니다">-->
+        </iframe></p>    
+
+        <h2>3. 테이블</h2>
+        <h3>(1) 기본 형식</h3>
+
+        &#xe61; 예시<br>
+        <table border="1">
+        &#x261e; 전체적으로 table로 감싸고 caption 다음부터 각 열을 tr로 감쌈<br><br>
+
+            <caption>과목별 성적(caption으로 감쌈)</caption>
+            <tr>
+                <th>과목(th)</th><th>중간시험(th)</th><th>기말시험(th)</th>                
+            </tr>
+            <tr>
+                <td>머신러닝(td)</td>
+                <td>30(td)</td>
+                <td>46(td)</td>                
+            </tr>
+            <tr>
+                <td>알고리즘(td)</td>
+                <td>29(td)</td>
+                <td>50(td)</td>
+            </tr>
+        </table>
+        
+        <h3>(2) 테이블 생성을 위한 기본 요소</h3>
+        <p>&#xe61e; table요소<br>
+        m행xn열 &rarr; m개의 tr요소, 각 tr내에서 n개의 td요소<br>
+        테이블의 테두리 지정 &rarr; border속성, 테두리 스타일 지정은 css 사용</p>
+
+        <p>&#xe61e; tr요소(table row)<br>
+        테이블에서 행을 정의하는 요소로 td요소 또는 th요소 포함해야 사용 가능</p>
+
+        <p>&#xe61e; td요소(table data)<br>
+        데이터(텍스트, 이미지, 테이블 등)를 표시하는 표준 셀을 정의<br>
+        왼쪽 정렬</p>
+
+        <p>&#xe61e; th요소(table header)<br>
+        테이블 내부에서 행열의 제목을 표시하는 헤더 셀을 정의<br>
+        진하게 가운데 정렬</p>
+
+        <p>&#xe61e; caption요소<br>
+        테이블 전체에 대한 제목을 표시할 때 사용<br>    
+        테이블 상단에 진하게 가운데 정렬. css속성으로 변경 가능</p> 
+        
+        <h3>(3) 셀 병합</h3>
+        &#x261e; 인접한 여러 셀을 합쳐서 하나의 셀로 만드는 경우<br>
+        &rarr; td 또는 th 요소 내에서만 사용<br><br>
+        &#xe61e; rowspan속성<br>       
+        &rarr; rowspan="n"<br> 
+        &rarr; 현재 셀 위치에서 인접한 n개의 행을 병합(세로 방향)<br><br>
+        &#xe61e; colspan속성<br>
+        &rarr; colspan="n"<br>
+        &rarr; 현제 셀의 위치에서 인접한 n개의 열을 병합(가로 방향)<br>
+
+        <p>
+        &#xe61e; 예시<br><br>
+        &#x261e; 병합 전
+        <table border="1">
+            <tr>
+                <td>1-1</td><td>1-2</td><td>1-3</td><td>1-4</td>
+            </tr>
+            <tr>
+                <td>2-1</td><td>2-2</td><td>2-3</td><td>2-4</td>
+            </tr>
+            <tr>
+                <td>3-1</td><td>3-2</td><td>3-3</td><td>3-4</td>
+            </tr>
+        </table><br>
+        &#x261e; 병합 후<br><br>
+        <table border="1">
+            <tr>
+                <td colspan="4">1-1 ~ 1-4</td>
+            </tr>
+            <tr>
+                <td rowspan="2">2-1<br>3-1</td>
+                <td rowspan="2">2-2<br>3-2</td>
+                <td>2-3</td>
+                <td>2-4</td>
+            </tr>
+            <tr>
+                <td colspan="2"> 3-3, 3-4</td>
+            </tr>
+        </table>
+        </p>
+
+        <h3>(4) 행 단위 콘텐츠의 그룹핑</h3>
+        &#xe61e; thead, tbody, tfoot 요소<br>
+        &rarr; 테이블 레이아웃에 아무런 영향을 미치지 않음<br>
+        <p>
+        <table border="1">
+            <thead>
+                <tr><th>과목</th><th>점수</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>국어</td><td>90</td></tr>
+                <tr><td>영어</td><td>97</td></tr>
+                <tr><td>수학</td><td>89</td></tr>
+            </tbody>
+            <tfoot>
+                <tr><td>평균</td><td>92</td></tr>
+            </tfoot>
+        </table>    
+        </p>    
+
+        <h3>(5) 열 단위 스타일 지정</h3>
+        &#xe61e; colgroup요소<br>
+        &#x261e; 하나 이상의 열들을 모아서 한꺼번에 스타일 지정<br>
+        &#x261e; 요소의 사용 위치 : table &rarr; caption &rarr; colgroup &rarr; thead &rarr; tr ...<br><br>
+        &#xe61e; col요소<br>
+        &#x261e; 지정된 열에 대해서 서로 다른 포매팅을 정의하는 요소<br>
+        &#x261e; colgroup 요소의 자식요소로 종료태그 없이 사용 span="n"<br>
+
+        <table border="1">
+            <colgroup>
+                <col class="subject">
+                <col span="2" class="score">
+                <col class="average">
+            </colgroup>
+                <tr>
+                    <th>과목</th><th>중간시험</th><th>기말시험</th><th>평균</th>
+                </tr>
+                <tr>
+                    <td>국어</td><td>90</td><td>95</td><td>92.5</td>
+                </tr>
+                <tr>
+                    <td>영어</td><td>96</td><td>90</td><td>93.0</td>
+                </tr>
+                <tr>
+                    <td>수학</td><td>85</td><td>95</td><td>90.0</td>
+                </tr>
+        </table>
+    </body>
+</html>

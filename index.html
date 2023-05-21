@@ -2,75 +2,33 @@
 <html>
     <head>
         <!--메타정보(title, link, style, script, meta, base) 포함-->
-        <title>HTML요소: 텍스트 표현</title> 
+        <title>Web_Programming</title> 
         <meta charset="utf-8">
         <style>
             h1{
-                font-size:40px;
-                text-align:center
+                font-size:50px;
+                text-align:center;
+            }
+            h3{
+                text-align:center;
+            }
+            div{
+                text-align: center;
             }
         </style>
     </head>
     <body><!--자바스크립트 코드 위치 가능-->
+        <h1><a href="index.html">Web programming</a></h1>
         <ol>
-            <li><a href="index.html">HTML: 텍스트</a></li>
+            <li><a href="txt.html">HTML: 텍스트</a></li>
             <li><a href="list_img_table.html">HTML: 리스트 이미지 테이블</a></li>
             <li><a href="media_semantic.html">HTML: 미디어 시멘틱</a></li>
             <li><a href="webform.html">HTML: 웹폼</a></li>
         </ol>
-        <h1>HTML요소: 텍스트 표현 </h1>
-        <h2>1. 줄을 바꾸는 br요소</h2>
-            편집기에서 엔터키 같은 기능<br>
-            종료태그 없이 사용
-        <h2>2. 단락을 나누는 p요소</h2>
-            문단을 나누어 독립된 단락을 생성<br>
-            단락 구분을 위해 단락 전후에 빈 줄이 자동으로 추가됨    
-        <h2>3. 수평선을 그리는 hr요소</h2>
-            텍스트 사이에 수평선을 그림. 주제가 변경되는 콘텐츠를 구분하는 용도<br>
-            자동 줄바꿈, 종료태그 없이 사용 
-        <h2>4. 단락의 제목을 지정하는 hn요소</h2>
-            굵은 글자(볼드체), 자동 줄바꿈
-        <h2>5. 텍스트를 자유롭게 표시하는 pre요소</h2>
-            편집기에서 문자가 입력된 형태를 그대로 유지하여 출력<br>
-            텍스트는 고정폼. 행의 길이가 브라우저 길이보다 길어져도 자동 줄바꿈되지 않음<br>
-            특수 문자가 많은 텍스트를 표시할 때 유용<br>
-            pre요소 안에서 html요소는 문자로 취급되지 않고 html요소로서 적용됨
-        <h2>6. 인용문을 작성하는 blockquote요소</h2>
-            상하 빈 줄로 구분되는 인용문 단락의 생성 및 들여쓰기<br>
-            cite속성으로 인용된 부분의 URL지정     
-        <h2>7. 공백 및 특수문자 입력</h2>
-            두 칸 이상의 연속된 공백, 예약어로 사용되는 문자, 키보드로 직접 입력할 수 없는 문자를 입력하는 방법<br>
-            &특수이름; 또는 10진수코드(앞에 &#) 또는 16진수코드(앞에 &#x)<br>
-            예:<br>
-            줄바꿈 요소&rarr; &lt;br&gt;<br/>
-            &nbsp; 문단 구분 요소 &rarr; &#60;p&#62;<br/>
-            &nbsp; &nbsp; 공백문자 &rarr; &amp; nbsp; <br/>
-            &nbsp; &nbsp; &nbsp; 키보드로 입력 불가 문자 &rarr; &copy;,&#x2661;,&#x261e; 등        
-        <h2>8. 글자 스타일 지정 요소</h2>
-        <h3>&nbsp;&#x261e; 물리적 스타일 관련 요소</h3>
-            &rarr; 브라우저에 표시되는 출력 모양 지정<br>
-            &rarr; b(강조), i(기울기), s(가운데줄), u(아래줄), sup(위첨자), sub(아래첨자), small(작게) 등
-        <h3>&nbsp;&#x261e; 논리적 스타일 관련 요소</h3>
-            &rarr; 요소 자체가 의미를 갖는다<br>
-            &rarr; cite, code, samp, var, dfn, em(강조), strong(중요성), abbr(축약), address, kbd(키보드), "q"(인용), mark 등
-        <h2>9. 블록 요소 vs 인라인 요소</h2>
-        <h3>&#x261e; 블록 요소</h3>
-        &rarr; 문서구조 요소<br>
-        &rarr; 항상 새로운 줄에서 시작해서 <u>하나의 줄 전부 차지</u>해서 내용 표시되는<br>
-        &rarr; 자동으로 줄바꿈 수행<br>
-        &rarr; div, p, h1 등<br>
-        <h3>&#x261e; 인라인 요소</h3>
-        &rarr; 텍스트 요소<br>
-        &rarr; <u>입력하는 내용만큼의 공간 차지</u>해서 내용 표시<br>
-        &rarr; 줄바꿈 미수행<br>
-        &rarr; span, img, strong 등
-        <h2>10. 콘텐츠 컨테이너 요소: div, span</h3>
-        <h3>&#x261e; div 요소</h3>
-        &rarr; 블록 요소<br>
-        &rarr; <b>대량의 내용</b>에 대해 css 스타일 지정 또는 전체 페이지 공간을 분할하여 레이아웃을 구성하는데 사용
-        <h3>&#x261e; span 요소</h3>
-        &rarr; 인라인 요소<br>
-        &rarr; <b>텍스트 일부</b>에 대해 css 스타일을 지정 또는 자바스크립트에서 조작할 때 유용
+        <div>
+            <img src="jam.png" width="500">
+        </div>
+        <br>
+        <h3>한국방송통신대학교 웹 프로그래밍 강의자료를 기반으로 작성된 문서입니다<br></h3>
     </body>
-
 </html>

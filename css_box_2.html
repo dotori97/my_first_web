@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CSS: 박스모델 테두리(2)</title>
+        <meta charset="utf-8">
+        <style>
+            h1{
+                 font-size:40px;
+                 text-align:center;
+             }
+ 
+            table{border-collapse: collapse;}
+
+            div{width:100px; height:100px; 
+                /*background-color:olive; */
+                color:black;
+                border:2px solid;
+                margin:10px; padding:10px;
+                float:right}
+            /*    
+            div{width:120px; height:120px}    
+            .pos1{position:static; top:120px; left:120px; background-color:gray;}
+            .pos2{position:relative; z-index:3; top:30px; left:60px; background-color:orange;}
+            .pos3{position:absolute; z-index:2; top:120px; right:150px; background-color:lightblue;}
+            .pos4{position:absolute; top:90px; left:90px; background-color:aqua;}
+            .pos5{position:fixed; top:30px; right:10px; background-color:olive;}
+            */    
+
+            .b-r1{border-radius:25px/25px; border:5px solid blue}
+            .b-r2{border-radius: 15px 50px 30px 20px / 30px 25px 10px 20px; border:5px double red;}
+            .b-r3{border-radius: 10px 20px 30px 40px; border:5px solid}
+
+            .box1{border-radius: 25px 0}
+            .box2{border-radius: 10px 15px 20px 25px}  
+            
+            .s1{box-shadow: 10px 10px blue}
+            .s2{box-shadow: 10px 10px 10px blue}
+            .s3{box-shadow: 10px 10px 10px 10px blue}
+            .s4{box-shadow: 10px 15px red inset}
+
+        </style>
+    </head>
+    <body>
+        <h1><a href="index.html">Web programming</a></h1>
+        <ol>
+            <li><a href="txt.html">HTML: 텍스트</a></li>
+            <li><a href="list_img_table.html">HTML: 리스트 이미지 테이블</a></li>
+            <li><a href="media_semantic.html">HTML: 미디어 시멘틱</a></li>
+            <li><a href="webform.html">HTML: 웹폼</a></li>
+            <li><a href="css_selector.html">CSS: 개요 선택자 색상</a></li>
+            <li><a href="css_pont+txt+list+table.html">CSS: 글꼴 텍스트 리스트 테이블</a></li>
+            <li><a href="css_box+border.html">CSS: 박스모델 테두리(1)</a></li>
+            <li><a href="css_box_2.html">css: 박스모델 테두리(2)</a></li>
+        </ol>
+        <hr>
+        <div class="pos1">position:static top:120px left:120px</div><br>
+        <div class="pos2">position:relative z-index:3 top:30px left:60px</div><br>
+        <div class="pos3">position:absolute z-index:2 top:120px right:150px</div><br>
+        <div class="pos4">position:absolute top:90px left:90px</div><br>
+        <div class="pos5">postion:fixed top:30px right:10px</div><br>
+
+        <div>박스1</div>
+        <div>박스2</div>
+        <div>박스3</div>
+
+        <div class="b-r1">border-radius1</div>
+        <div class="b-r2">border-radius2</div>
+        <div class="b-r3">border-radius3</div>
+
+        <div class="box1 s1">박스1 그림자1</div>
+        <div class="box1 s2">박스1 그림자2</div>
+        <div class="box2 s3">박스2 그림자3</div>
+        <div class="box2 s4">박스2 그림자4</div>
+
+    </body>
+</html>        

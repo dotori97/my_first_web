@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CSS: 개요 선택자 색상</title>
+        <meta charset="utf-8">
+        <style>
+            h1{
+                 font-size:40px;
+                 text-align:center;
+             }
+         </style>
+    </head>
+    <body>
+        <h1><a href="index.html">Web programming</a></h1>
+        <ol>
+            <li><a href="txt.html">HTML: 텍스트</a></li>
+            <li><a href="list_img_table.html">HTML: 리스트 이미지 테이블</a></li>
+            <li><a href="media_semantic.html">HTML: 미디어 시멘틱</a></li>
+            <li><a href="webform.html">HTML: 웹폼</a></li>
+            <li><a href="css_selector.html">CSS: 개요 선택자 색상</a></li>
+            <li><a href="css_pont+txt+list+table.html">CSS: 글꼴 텍스트 리스트 테이블</a></li>
+            <li><a href="css_box+border.html">CSS: 박스모델 테두리(1)</a></li>
+            <li><a href="css_box_2.html">css: 박스모델 테두리(2)</a></li>
+        </ol>        
+        <hr>
+        <h1>CSS: 개요 선택자 색상</h1>
+        <h2>1. CSS 개요</h2>
+        <h3>(1) CSS란? </h3>
+        Cascading Style Sheets<br>
+        웹 문서에 스타일(글꼴, 색상, 여백 등)을 추가하는 간단한 메커니즘<br><br>
+
+        <h3>(2) CSS 형식</h3>
+        선택자 { 선언 블록 } <br><br>
+
+        선언블록 &rarr; 선언; 선언; ... <br>
+        선언 &rarr; 속성:값; <br>
+
+        &#x261e; 예시<br>
+        p{color:red; font-size:25px;}<br><br>
+
+        <h3>(3) CSS 적용 방법</h3>
+        HTML 문서에서 스타일이 정의되는 위치에 따른 구분<br>
+        &#x261e; style 요소 사용 &rarr; 임베디드 방식<br>
+        head<br>
+        &nbsp; style<br>
+        &nbsp;&nbsp; p{color:red; forn-size:25px;}<br>
+        &nbsp; /style<br>
+        /head<br><br>
+        &#x261e; style 속성 사용 &rarr; 인라인 방식<br>
+        p style="color:red; font-size:25px;" CSS /p<br><br>
+        &#x261e; 외부 파일 사용 &rarr; 링크 방식<br>
+        ex.css &rarr; p{color:red; font-size:25px;}<br>
+        head <br>
+        &nbsp; link rel="stylesheet" href="ex.css"<br>    
+        /head <br><br>
+
+        style <br>
+        &nbsp;@import url(ex.css)<br>
+        /style<br><br>
+
+        <h3>(4) CSS 적용 우선순위</h3>
+        <!--
+        <head>
+            외부파일(mystyle.css): body{backgroud-colr:yellow;}
+            <link rel="stylesheet" href="mystyle.css">
+            <style>
+                body{background-color:skyblue}
+            </style>     
+        </head>
+        <body style="backgroud-color:pink">
+            <p>브라우저의 바탕색은? </p>
+        </body>-->
+        
+        style속성 > style요소 > 외부파일 > 브라우저 디폴트<br><br>
+
+        <h2>2. 선택자</h2>
+        <h3>(1) 선택자란?</h3>
+        스타일을 적용하려는 HTML요소를 지정하기 위한 패턴<br>
+        기본선택자, 가상선택자(가상클래스, 가상요소), 결합자<br><br>
+
+        &#xe61e; 기본선택자의 종류<br>
+        전체 선택자 &rarr; 모든 요소를 선택<br>
+        타입 선택자 &rarr; 지정한 모든 요소만 선택<br>
+        클래스 선택자 &rarr; class="속성명" 속성을 가진 요소만 선택<br> 
+        아이디 선택자 &rarr; id="속성명" 속성을 가진 요소만 선택<br>
+        속성 선택자 &rarr; 속성 표현에 해당하는 속성을 가진 요소 선택<br>
+
+        <h4>기본 선택자</h4>
+        &#xe61e; 전체 선택자<br>
+        '*' 기호 사용 &rarr; 웹 문서의 모든 요소에 스타일 적용<br>
+        *{color:green}<br><br>
+
+        &#xe61e; 타입 선택자<br>
+        스타일을 적용하려는 HTML 요소 이름을 직접 사용<br>
+        table{color:blue}<br>
+        ul{color:red; font-style:italic;}<br><br>
+
+        &#xe61e; 클래스 선택자<br>
+        &#x261e; 같은 요소지만 서로 다른 스타일을 적용하는 경우<br>
+        css 정의 &rarr; 요소명.클래스명{속성:값;...}<br>
+        css 적용 &rarr; <요소명 class="클래스명"> 내용 </요소명><br>
+        &#x261e; 서로 다른 요소지만 같은 스타일을 적용하는 경우<br>
+        css 정의 &rarr; .클래스명{속성:값; ...} &rarr; 요소명 생략<br>
+        css 적용 &rarr; <요소명 class="클래스명"> 내용 </요소명><br><br>
+
+        &#xe61e; 아이디 선택자<br>
+        클래스 선택자의 사용방법과 거의 동일 &rarr; #기호, id속성<br>
+        css 정의 &rarr; 요소명#아이디명{속성:값; ...}<br>
+        css 적용 &rarr; <요소명 id="아이디명"> 내용 </요소명><br>
+        &#x261e; 아이디명은 문서 내부에서 중복되지 않고 오직 하나의 요소에서만 사용<br><br>
+
+        &#x261e; 예시<br>
+    
+        <style>
+            p{font-style:italic;}
+            p.class1{text-decoration:overline;}
+            .class2{text-decoration:underline;}
+            .header{border:3px green dotted; text-decoration:line-through;}
+            #style1{font-size:20pt;color:blue;}
+            p#style2{font-size:15pt;color:red;}
+        </style>
+        <div id="style1">
+            div요소는 아이디 선택자(style1) 적용
+            <h3 class="class2 header">h3요소에는 class2와 header+style1</h3>
+            <p class="class1 class2"> 첫번째 p요소에는 p, class1, class2+style1</p>
+            <p id="style2" class="class2"> 두번째 p요소에는 p, style2, class2+style1 적용</p>
+        </div>
+        <br>
+
+        &#xe61e; 속성 선택자<br>
+        요소의 속성값에 대한 표현과 일치하는 HTML요소 선택<br>
+        &#x261e; 요소명[속성명 연산자 값]{속성:값; ...}<br><br>
+
+        요소명[속성명] &rarr; 속성값과 상관없이 해당 속성을 사용하는 요소 선택<br>
+        요소명[속성명="값"] &rarr; 속성값과 일치하는 요소 선택<br>
+        요소명[속성명~="값"] &rarr; 속성값을 공백으로 구분한 요소 선택<br>
+        요소명[속성명|="값"] &rarr; 속성값이 정확히 일치하거나 값으로 시작하고 바로 뒤에 - 기호로 구분한 요소 선택<br>
+        요소명[속성명^="값"] &rarr; 속성값의 시작 부분의 문자와 일치하는 요소 선택<br>
+        요소명[속성명$="값"] &rarr; 속성값의 끝부분의 문자와 일치하는 요소 선택<br>
+        요소명[속성명*="값"] &rarr; 속성갑 전체 중 어떤 일부분이라도 일치하는 요소 선택<br><br>
+
+        &#xe61e; 예시1<br>
+        <style>
+            input[type]{font-size:20pt;color:blue}
+            input[type="text"]{background-color:yellow}
+            input[type="password"]{background-color:cyan}
+        </style>    
+        <body>
+            <form>
+                아이디:<input type="text"><br/><br/>
+                비밀번호:<input type="password">
+            </form>
+        </body>
+        <br><br>
+        &#xe61e; 예시2<br>
+        style <br>
+            a[target]{font-size:30pt} <br>
+            a[target="blank"]{font-style:italic} <br>
+            a[title~="knou"]{border:3px red dotted} <br>
+            a[title|="cs"]{background-color:black; color:white} <br>
+            a[href^="https"]{font-size:20px} <br>
+            a[href$="com"]{text-decoration: overline} <br>
+            a[href*="you"]{font-weight: bold; font-style:italic} <br>
+        /style <br>
+        a title="knou" href="http://www.knou.ac.kr" target="blank" 한국방송통신대학교 /a <br>
+        a title="cs-knou" href="http://cs.knou.ac.kr" 방송대 컴퓨터과학과 /a <br>
+        a href="https://kr.youtube.com" 유튜브 /a <br><br>
+
+        
+        <style>
+            a[target]{font-size:30pt}
+            a[target="blank"]{font-style:italic}
+            a[title~="knou"]{border:3px red dotted}
+            a[title|="cs"]{background-color:black; color:white}
+            a[href^="https"]{font-size:20px}
+            a[href$="com"]{text-decoration: overline}
+            a[href*="you"]{font-weight: bold; font-style:italic}
+        </style>
+        <a title="knou" href="http://www.knou.ac.kr" target="blank">한국방송통신대학교</a><br><br>
+        <a title="cs-knou" href="http://cs.knou.ac.kr">방송대 컴퓨터과학과</a><br><br>
+        <a href="https://kr.youtube.com">유튜브</a><br><br>
+
+        <h4>가상선택자</h4>
+        웹 문서상에는 존재하지 않지만 어떤 상황이 발생한 경우에만 적용<br><br>
+        
+        &#x261e; 가상 클래스 &rarr; 기본선택자:가상클래스<br>
+        링크 &rarr; :link, :visited, <br>
+        사용자 동작 &rarr; :hover, :active, :focus <br>
+        UI상태 &rarr; :enabled, :disabled, :checked <br>
+        부정 &rarr; :not <br>
+        트리구조 &rarr; :root, :nth-child(), :nth-last-child(), :first-child, :last-child, :nth-of-type(), :first-of-type; :only-child, :only-of-type, :empty<br><br>
+
+       
+        <!--
+        <style>
+            p{pont-size:14pt;}
+            a:link{color:red;}
+            a:visited{color: black;}
+            a:hover{font-size:20pt}
+            a:active{background-color:yellow;}
+        </style>
+        
+        <p><a href="...">방송대</a></p>
+        <p><a href="...">컴퓨터과학과</a></p>
+        <p><a href="...">교수 홈페이지</a></p>
+        -->
+
+        :link 아직 방문하지 않은 모든 링크 선택 <br>
+        :visited 방문한 적이 있는 링크 선택 <br>
+        :hover 마우스가 올라간 링크 선택 <br>
+        :active 활성화되는(클릭되는) 링크 선택<br><br>
+        :focus 포커스를 가진 요소<br>
+        :enabled 활성화된 상태의 요소<br>
+        :disabled 비활성화된 상태의 요소<br>
+        :checked 체크된 input 요소(체크박스, 라디오버튼)<br>
+        :not(x) x로 표현되지 않은 요소<br>
+        :nth-child(n) 동일한 부모 요소 안에서 n번째 자식 요소 선택<br>
+        :nth-last-child(n) 동일한 부모 요소 안에서 끝에서 n번째 자식 요소 선택<br>
+        :nth-of-type(n) 동일한 부모 요소 안의 형제 요소들 중에서 지정한 요소만을 계산하여 n번째 요소 선택<br>
+        :first-of-type = :nth-of-type(1)<br><br>
+
+       
+        &#x261e; 가상 요소 &rarr; 기본선택자::가상요소<br>
+        ::first-letter, ::first-line, ::before, ::after<br><br>
+
+        <style>
+            p{pont-size: 17pt; line-height: 150%}
+            P.line::first-line{color:blue; font-weight: blold; font-style: italic}
+            p.line::first-letter{color:red; font-size: 200%}
+            p.note::before{content:"주의사항: "; border:2px solid red; font-weight:bold;}
+            p.note::after{content:"-이상 끝-"; background-color:black; color:white; font-weight:bold;}
+        </style>
+        <p class="line"> Love is patient, ...</p>
+        <p class="note">가상 요소 ...</p>
+        <br>
+        ::first-line 특정 요소의 첫 번째 줄을 선택<br>
+        ::first-letter 특정 요소의 첫 번째 글자를 선택<br>
+        ::before 요소 앞에 내용/스타일 추가<br>
+        ::after 요소 뒤에 내용/스타일 추가<br><br>
+
+        
+        <h4>결합자</h4>
+        두 개 이상의 선택자를 결합하는 방법<br>
+
+        <table border="1">
+            <tr>
+                <th>결합자 이름</th><th>사용 형식</th><th>예제</th>
+            </tr>
+            <tr>
+                <td>자손(하위)결합자</td><td>선택자1&nbsp;선택자2</td><td>div&nbsp;li</td>
+            </tr>
+            <tr>     
+                <td>자식 결합자</td><td>선택자1 > 선택자2</td><td>p > em</td>
+            </tr>
+            <tr>
+                <td>인접 형제 결합자</td><td>선택자1 + 선택자2</td><td>h1 + p</td>
+            </tr>
+            <tr>
+            <td>일반 형제 결합자</td><td>선택자1~선택자2</td><td>li.style1~li</td>
+            </tr>
+            <tr>
+                <td>그룹 결합자</td><td>선택자1, 선택자2, ...</td>h1, p
+            </tr>     
+        </table>
+
+        <style>
+            /*div요소의 자손요소 중에서 li요소를 선택하는 경우*/
+            div li {font-weight: bold; color:red;}
+            /*p요소 바로 아래에 포함된 자식 요소인 em 요소를 선택하는 경우*/
+            p>em {font-size: 15pt; color:blue; font-weight:bold;}
+            /*h1요소의 형제요소 중에서 바로 뒤에 인접한 p요소를 선택하는 경우*/
+            h1+p{background-color:cyan;}
+            /*클래스명 style1을 가진 li요소 바로 다음에 오는 형제 요소 중에서 모든 li요소를 선택하는 경우*/
+            li.style1~li{background-color:yellow;}
+            /*h1요소와 p요소에 동일한 스타일을 적용하는 경우*/
+            h1, p{font-style:italic; font-family:cursive;}
+        </style>
+        <div>
+            <h1>CSS 결합자</h1>
+            <p>css에서 사용하는 <em>결합자의 종류</em>를 연습하기 위한 문서입니다</p>
+            <ul>
+                <li>자손 결합자는 선택자1 공백 선택자2</li>
+                <li class="style1">자식 결합자는 선택자1 > 선택자2</li>
+                <li>인접 형제 결합자: 선택자1 + 선택자2</li>
+                <li>일반 형제 결합자: 선택자1 ~ 선택자2</li>
+                <li>그룹 결합자: 선택자1, 선택자2, ...</li>
+            </ul> 
+            <p>다양한 결합자를 사용해서 결과를 확인해 보세요</p>
+        </div>
+        <br>
+
+        <h2>3. 색상</h2>
+        색상에 해당하는 영어 단어를 직접 사용<br>
+        16진수 사용: #RRGGBB &rarr; RR, GG, BB는 00~ff(0~255) 사이의 16진수 값<br>
+        RGB함수 사용:<br> 
+        rgb(R, G, B) &rarr; R, G, B 각 값을 0~255 사이의 10진수로 표시<br>
+        rgb(R%, G%, B%) &rarr; R, G, B 각 값을 백분율(0~100%)료 표시<br>
+        rgba(R, G, B, Alpha): rgb(R, G, B) + 투명도 &rarr; 완전 투명(0.0)~완전 불투명(1.0)<br>
+        HSL함수 사용:<br>
+        hsl(색조, 채도, 밝기) &rarr; 색조(red=0=360, green=120, blue=240) 채도(0~100%) 밝기(0~100%)<br>
+        hsla(색조, 채도, 밝기, Alpha)<br><br>
+        
+        &#xe61e; 색상 지정 관련 속성<br>
+        color: HTML요소의 텍스트 색상 (값 &rarr; <색상>, transparent=rgba(0,0,0,0.0))<br>
+        background-color: HTML요소의 배경색<br>
+        border-color: 테두리 색상<br>
+        opacity: 요소의 불투명도 (값 &rarr; 0.0~1.0)<br><br>
+
+        <p style ="color: red">글자: 빨강</p>
+        <p style="background-color: green; opacity:0.5">배경색: 반투명의 초록</p>
+        <p style="border-color:blue">테두리: 파랑</p>
+
+       
+        
+        
+
+
+        
+
+
+    </body>
+</html>

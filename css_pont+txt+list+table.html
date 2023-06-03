@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CSS: 글꼴, 텍스트, 리스트, 테이블</title>
+        <meta charset="utf-8">
+        <style>
+            h1{
+                 font-size:40px;
+                 text-align:center;
+             }
+            h4{font-variant: small-caps; color: white; background-color:blue;}
+            p em{font-size: 15pt; font-style: normal; font-weight:700; font-family:고딕체, 궁서체, 명조체;} 
+            .style1{font-style: oblique; font-size:larger;}
+            .text1{
+                    text-decoration-line: line-through;
+                    text-decoration-color: red;
+                    text-decoration-style: wavy;
+                    text-decoration-thickness: 3px}
+            .text2{text-decoration: underline overline blue dotted 20%}           
+            .text3{width: 250px; border:1px solid red; 
+                    white-space: nowrap; /*요소 내의 공백문자의 처리 방식*/
+                    overflow: hidden; /*hidden, scroll, auto 가능 */
+                    text-overflow: clip}              
+            ul{list-style-image: url(lego.png)}
+            .outside{list-style-position:outside}
+            .inside{list-style-position:inside}     
+
+            /*
+            ul {list-style: none; padding:0; margin:0}
+            ul li {padding-left: 16px}
+            ul li::before{content:"※"; padding-right:8px; color:blue}
+            
+            -->※알고리즘
+               ※머신러닝
+               ※웹프로그래밍            
+            */
+
+            table{border-collapse: collapse;}
+
+         </style>
+    </head>
+    <body>
+        <h1><a href="index.html">Web programming</a></h1>
+        <ol>
+            <li><a href="txt.html">HTML: 텍스트</a></li>
+            <li><a href="list_img_table.html">HTML: 리스트 이미지 테이블</a></li>
+            <li><a href="media_semantic.html">HTML: 미디어 시멘틱</a></li>
+            <li><a href="webform.html">HTML: 웹폼</a></li>
+            <li><a href="css_selector.html">CSS: 개요 선택자 색상</a></li>
+            <li><a href="css_pont+txt+list+table.html">CSS: 글꼴 텍스트 리스트 테이블</a></li>
+            <li><a href="css_box+border.html">CSS: 박스모델 테두리(1)</a></li>
+            <li><a href="css_box_2.html">css: 박스모델 테두리(2)</a></li>
+        </ol>       
+        <hr>
+        <h1>CSS: 글꼴, 텍스트, 리스트, 테이블</h1>
+        <h2>1.글꼴</h2>
+        &#xe61e; 글꼴 관련 속성<br>
+        font-family &rarr; 글자체 종류<br>
+        font-size &rarr; 글자 크기<br>
+        font-style &rarr; 글자 스타일<br>
+        font-variant &rarr; 작은 크기의 대문자로 변환<br>
+        font-weight &rarr; 글자 굵기<br>
+        font &rarr; 글자 관련 속성(font-*)의 일괄 지정<br>
+        @font-face &rarr; 사용자 정의 글꼴<br><br>
+        
+        &#xe61e; 폰트 지정<br>
+        폰트패밀리 &rarr; serif(명조 계열), sans-serif(고딕 계열), cursive(필기 모양의 글꼴), fantasy(장식이 된 글꼴), monospace(고정폭 글꼴)<br>
+        일반폰트명 &rarr; arial, 궁서체, "Timies New Roman"...<br><br>
+
+        &#x261e; 예시<br>
+        p{font-family:궁서체, "Times New Roman", serif}<br><br>
+
+        &#xe61e; font-size 속성<br>
+        절대크기: xx-small, x-small, small, medium, large, x-large, xx-large<br>
+        상대크기: smaller, lager<br>
+        절대크기 단위: cm, mm, in, pt, pc, px<br>
+        상대크기 단위: em(부모요소의 글꼴 크기=1em), ex, %<br><br>
+
+        &#xe61e; font-style, font-variant 속성<br>
+        &#x261e; font-style &rarr; 글자 모양 지정 / nomal, italic(기울어진 형태), oblique(기울어진 형태)<br>
+        &#x261e; font-variant &rarr; 작은 크기의 대문자로의 변환 여부<br><br>
+
+        &#xe61e; font-weight 속성 &rarr; 글자의 굵기<br>
+        normal, bold, bolder, lighter, 100, 200, ...800,900<br><br>
+
+        &#xe61e; font 속성<br>
+        &#x261e; 글꼴 관련 속성(font-*)을 한꺼번에 지정하는 속성<br>
+        font: [-weight값 | -style값 | -variant값] -size값 [/line-height값] -family값;<br><br>
+
+        예시&rarr; .style{font:700 italic small-caps 25pt /10pt sans-serif} <br><br>
+
+        &#xe61e; @font-face 규칙<br>
+        사용자 정의 글꼴을 사용하기 위한 규칙<br>
+        &#x261e; @font-face{font-family: "사죵자 지정 글꼴명"; src:url("글꼴의 경로와 파일명");}<br>
+        @font-face{font-family:'myFont'; src:url(myFont.otf);}<br><br>
+
+        &#xe61e; 예시<br>
+        <h4>Cascading Style Sheets: font</h4>
+        <p> font관련 속성을 사용하려면 <em>폰트(서체), 글자 크기, 스타일, 굵기, 작은 대문자로 지정</em> 등과 같은 글자 자체의 모양을 지정할 수 있다</p>
+        <p> 속성의 종류: <strong class="style.">font-family, -size, -style, -weight, -variant</strong></p>
+        
+        <h2>2. 텍스트</h2>
+        &#xe61e; 텍스트 관련 속성<br>
+        letter-spacing: 문자 사이의 간격 &rarr; mormal, 길이(음수 가능)<br> 
+        word-spacing: 단어 사이의 간격 &rarr; normal, 길이(음수 가능)<br>
+        line-height: 문장의 줄 간격 지정 &rarr; normal, 길이, 숫자(현재 글꼴 크기의 상수배), %(현재 글꼴 크기의 백분율)<br>
+        text-align: 텍스트의 수평 정렬 방식 지정 &rarr; left, right, center, justify(양쪽 정렬)<br>
+        text-align-last: 텍스트 마지막 줄의 정렬 방식 지정 &rarr; auto(=left), right, center, justify, start(라인의 시작 부분에 정렬), end(라인의 끝 부분에 정렬) &rarr; 이 속성을 사용하려면 먼저 text-align을 "justify"로 지정해야 동작한다<br>
+        text-indent: 텍스트 블록에서 첫 번째 줄의 들여쓰기 지정 &rarr; 길이(기본값 0), %(부모 요소의 폭에 대한 백분율)<br> 
+        text-transform: 텍스트의 영어 알파벳 표기 방식 지정 &rarr; none, capitalize, upptercase, lowercase<br> 
+        text-decoration-line: 텍스트 장식과 관련된 선의 종류 지정 &rarr; none, underline, overline, line-through &rarr; 하나 이상의 속성값을 동시에 사용 가능<br> 
+        text-decoration-color: 선의 색상 지정<br> 
+        text-decoration-style: 선의 스타일 지정 &rarr; solid(실선), double(이중선), dotted(점선), dashed, wavy(물결) <br>
+        text-decoration-thickness: 선의 두께 지정 &rarr; auto, 길이, %<br>
+        text-decoration-*의 일괄 지정
+
+        <p class="text1">텍스트 장식 line-through red wavy 3px</p>
+        <p class="text2">일괄 지정 underline overline blue dotted 20%</p>
+
+        text-shadow: 텍스트에 그림자 효과 지정 &rarr; none, 수평위치(h>0 오른쪽), 수직위치(v>0 아래쪽), 흐림정도(그림자가 번지는 정도), 색상<br>
+        text-overflow: 요소 박스 영역을 벗어난 텍스트의 표시 방식 지정 &rarr; clip(표시하지 않음), ellipsis(...)<br>
+        
+        <p class="text3">지금까지 설명한 SELECT문으로는 레코드 단위의 데이터를 검색한다</p>
+        
+        word-wrap: 단어가 길어서 요소 폭을 넘을 때 단어를 분리해서 줄바꿈을 수행할지 여부 지정 &rarr; normal(미수행), break-word<br>
+        vertical-align: 요소의 수직 정렬 방식 지정 &rarr; 길이, %, baseline, sub, super, top, middle, botton, text-top, text-bottom<br><br>
+
+        <h2>3. 리스트</h2>
+
+        <table border="1">
+            <tr>
+                <th>속성</th><th>설명</th>
+            </tr>
+            <tr>
+                <td>list-style-type</td>
+                <td>항목 마커의 종류 지정<br>
+                (ul 요소)값 &rarr; none, disc, circle, square
+                (ol 요소)값 &rarr; decimal, lower-alpha, upper-alpha, lower-roman, upper-roman 등
+                </td>               
+            </tr>
+            <tr>
+                <td>list-style-position</td>
+                <td>항목 마커의 위치 지정<br>
+                    값 &rarr; inside, outside
+                </td>                
+            </tr>
+            <tr>
+                <td>list-style-image</td>
+                <td>이미지를 항목 마커로 지정<br>
+                    값 &rarr; none, url(이미지파일)
+                </td>
+            </tr>
+            <tr>
+                <td>list-style</td>
+                <td>리스트 관련 속성(list-style-*)이 일괄 지정</td>
+            </tr>            
+        </table>
+
+            <ul>
+                <li>알고리즘</li>
+                <li class="outside">머신러닝</li>
+                <li class="inside">웹프로그래밍</li>
+            </ul>
+            
+        <h2>4. 테이블</h2>
+        &#xe61e; border속성<br>
+        table, td, th 요소에 대한 테두리 지정<br><br>
+        
+        &#xe61e; table-layout속성<br>
+        셀 안의 내용의 크기에 따른 셀의 크기 변화 여부 지정<br>
+        auto &rarr; 셀의 폭이 셀의 내용의 크기에 따라 자동으로 결정<br>
+        fixed &rarr; 셀의 내용의 크기와 상관없이 테이블/셀의 폭에 의해서만 결정<br><br>
+        
+        &#xe61e; border-collapse속성<br>
+        테이블 테두리와 셀 테두리를 하나로 합칠지 여부 지정
+        separate &rarr; 두 테두리를 분리해서 표시<br>
+        collapse &rarr; 두 테두리를 하나로 합쳐서 표시(border-spacing속성과 empty-cells속성은 무시됨)<br><br>
+
+        &#xe61e; border-spacing속성<br>
+        인접한 셀 테두리 사이의 간격 지정<br><br>
+        
+        &#xe61e; caption-side속성<br>
+        테이블 캡션의 위치 지정 &rarr; top, bottom<br><br>
+
+        &#xe61e; empty-cells속성<br>
+        빈 셀의 테두리와 배경의 표시 여부 지정 &rarr; show, hide<br><br>
+
+ 
+     </body>
+</html>        
+
+

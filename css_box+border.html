@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CSS: 박스모델 테두리</title>
+        <meta charset="utf-8">
+        <style>
+            h1{
+                 font-size:40px;
+                 text-align:center;
+             }
+ 
+            table{
+                border-collapse: collapse;
+                border-width:thick;
+                border-right-width:thin;
+                border-style:solid;
+                border-bottom-style:dashed;
+                border-color:blueviolet;
+                border-left-color:green;
+            }
+
+            div{font-size: 14pt; border:solid; background-color:yellow}
+
+            span{background-color: red}
+
+            .m1{margin-top: 20px; margin-right: 40px; margin-bottom:60px; margin-left:30px;}
+            .m2{margin:20% 30% 40%}
+            .m3{margin:20%}   
+            .m4{margin: 20px 40px 30px 30px}
+            .m5{margin: 60px 50px 60px 50px}
+
+            .p1{padding-top:5%; padding-right:10%; padding-bottom:15%; padding-left:20%;}
+            .p2{padding: 20px 40px 5px 10px}
+            .p3{padding:5%}  
+
+            .block{width:350px; height:250px; border:1px solid black; background-color:white; position: relative; top:30px; left:30px}
+            .myDIV1{width:200px; border:1px solid red; background-color:yellow; position:relative; top: 20px}
+            .myDIV2{width:200px; border:1px solid red; background-color:yellow; position:relative; top: -20px}  
+            .myDIV3{width:200px; border:1px solid red; background-color:yellow; position:relative; bottom: 20px}  
+            .myDIV4{width:200px; border:1px solid red; background-color:yellow; position:relative; bottom: -30px}  
+            .myDIV5{width:200px; border:1px solid red; background-color:yellow; position:relative; left: 20%}
+            .myDIV6{width:200px; border:1px solid red; background-color:yellow; position:relative; left: -20px}  
+            .myDIV7{width:200px; border:1px solid red; background-color:yellow; position:relative; right: 35px}  
+            .myDIV8{width:200px; border:1px solid red; background-color:yellow; position:relative; right: -30px}  
+
+            /*
+            div{width:120px; height:120px;}
+            .pos1{position:static; top:120px; left:120px; background-color:gray;}
+            .pos2{position:relative; z-index:3; top:30px; left:60px; background-color:orange;}
+            .pos3{position:absolute; z-index:2; top:120px; right:150px; background-color:lightblue;}
+            .pos4{position:absolute; top:90px; left:90px; background-color:aqua;}
+            .pos5{position:fixed; top:30px; right:10px; background-color:olive;}
+            */
+
+            body{margin-left:20px;}
+            .disp{background-color:lightblue; display:none}
+            .disp{background-color:lightblue; display:inline}
+            /* 
+            .disp{background-color:lightblue; display:block}
+            .disp{background-color:lightblue; display:inline-block}
+            .disp{background-color:lightblue; display:list-item}
+             */
+
+            img.float{float:left}
+            p.clear{clear:left}
+
+            .b1{border: 10px dashed red}
+
+            .b-r1{border-radius:25px/25px; border:5px solid blue}
+            .b-r2{border-radius: 15px 50px 30px 20px / 30px 25px 10px 20px; border:5px double red;}
+            .b-r3{border-radius: 10px 20px 30px 40px; border:5px solid}
+            
+
+        </style>
+    </head>
+    <body>
+        <h1><a href="index.html">Web programming</a></h1>
+        <ol>
+            <li><a href="txt.html">HTML: 텍스트</a></li>
+            <li><a href="list_img_table.html">HTML: 리스트 이미지 테이블</a></li>
+            <li><a href="media_semantic.html">HTML: 미디어 시멘틱</a></li>
+            <li><a href="webform.html">HTML: 웹폼</a></li>
+            <li><a href="css_selector.html">CSS: 개요 선택자 색상</a></li>
+            <li><a href="css_pont+txt+list+table.html">CSS: 글꼴 텍스트 리스트 테이블</a></li>
+            <li><a href="css_box+border.html">CSS: 박스모델 테두리</a></li>
+        </ol>
+        <hr>
+        <h1>CSS: 박스모델, 테두리</h1>
+        <h2>1.박스 모델</h2>
+        마진 &rarr; margin(-top, -right, -bottom, -left)<br>
+        패딩 &rarr; padding(-top, -right, -bottom, -left)<br>
+        요소의 크기 &rarr; width, height, max-width, min-width, max-height, min-height<br>
+        요소의 위치 &rarr; position, top, bottom, left, right, z-index<br>
+        화면 표시 &rarr; display, overflow, visibility<br>
+        플로팅 &rarr; float, clear<br>
+        박스의 크기 &rarr; box-sizing, resize<br><br>
+
+        &#xe61e; 박스모델이란?<br>
+        모든 HTML요소(div h4 p 등)를 사각형 형태의 박스로 취급<br>
+        css를 통해 각 박스의 위치, 크기, 색상 등을 지정<br>
+        웹 페이지의 레이아웃을 구성하는 중요한 개념<br>
+
+        <img src="rabbit.png" width="300">
+
+        &#xe61e; 마진 속성<br>
+        박스의 외부 여백 지정<br>
+        모든 방향(상우하좌)에 대해서 일괄 지정<br>
+        margin:길이(기본값 0), %, auto<br>
+        margin-방향<br><br>
+
+        &#x261e; 속성값의 개수에 따른 마진의 적용 방향<br>
+        4 &rarr; 상 우 하 좌<br>
+        3 &rarr; 상 좌우 하<br>
+        2 &rarr; 상하 좌우<br>
+        1 &rarr; 상하좌우<br><br>
+
+        &#xe61e; 예시<br>
+        <div class="m1"> margin 지정</div><hr>
+        <div class="m2"> margin 지정</div><hr>
+        <div class="m3"> margin 지정</div><hr>
+        <div class="m4"> margin-bottom 30px</div>
+        <div class="m5"> margin-top 60px</div><hr>
+        
+        &#xe61e; padding 속성<br>
+        요소의 내용과 테두리 사이의 여백 지정<br>
+        모든 방향(상우하좌)에 대해서 일괄 지정<br>
+        padding:길이(기본값 0), %<br>
+        padding-방향: 길이, %<br><br>        
+
+        &#xe61e; 예시<br>
+        <div class="p1"><span>padding 박스 안의 간격 지정</span></div><br>
+        <div class="p2"><span>padding 박스 안의 간격 지정</span></div><br>
+        <div class="p3"><span>padding 박스 안의 간격 지정</span></div><br>
+        <br>
+
+        &#xe61e; 요소의 크기: width, height 속성<br>
+        요소의 콘텐츠가 표시되는 영역의 폭과 높이 지정<br>
+        값 &rarr; 길이, %, auto<br>
+        두 가지 속성 중 하나만 지정되면 나머지 하나는 자동으로 크기 결정<br>
+
+        &#xe61e; 요소의 위치: position 속성<br>
+        요소 배치의 기준이 되는 위치(요소의 위치 설정 방식) 지정<br>
+        static &rarr; 페이지의 정상적인 흐름에 따라 현재의 위치가 요소의 위치가 됨(별도의 위치 지정/변경 불가)<br>
+        absolute &rarr; 브라우저의 왼쪽 상단 모서리를 기준으로 지정한 위치만큼 이동하여 요소를 배치<br>
+        relative &rarr; 해당 요소의 현재 위치를 (0.0)으로 정하고, 이를 기준으로 지정한 위치만큼 이동하여 요소를 배치<br>
+        fixed &rarr; 브라우저 윈도우를 기준으로 지정한 위치만큼 이동하여 요소 배치(스크롤해도 움직이지 않음)<br> 
+        <br>
+
+        &#x261e; top, bottom, left, right 속성<br>
+        요소를 포함하는 박스의 각 변으로부터 해당 요소가 떨어져 있는 거리 지정<br>
+        값 &rarr; auto, 길이, %(포함 블록에 대한 백분율)<br><br>
+
+        <div class="block">
+            <div class="myDIV1">top:20px 속성을 이용하여 박스의 포함 블록읙 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다</div>
+        </div><br>
+        <div class="block">
+            <div class="myDIV2">top:-20px 속성을 이용하여 박스의 포함 블록읙 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다></div>
+        </div><br>
+        <div class="block">
+            <div class="myDIV3">bottom:20px 속성을 이용하여 박스의 포함 블록읙 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다></div>
+        </div><br>
+        <div class="block">
+            <div class="myDIV4">bottom:-30px 속성을 이용하여 박스의 포함 블록읙 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다></div>
+        </div><br>
+        <div class="block">
+            <div class="myDIV5">left:20% 속성을 이용하여 박스의 포함 블록읙 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다</div>
+        </div><br>
+        <div class="block">
+            <div class="myDIV6">left:-20px 속성을 이용하여 박스의 포함 블록읙 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다></div>
+        </div><br>
+        <div class="block">
+            <div class="myDIV7">right:35px 속성을 이용하여 박스의 포함 블록읙 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다></div>
+        </div><br>
+        <div class="block">
+            <div class="myDIV8">right:-30px 속성을 이용하여 박스의 포함 블록읙 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다></div>
+        </div><br><br><br>
+
+        &#xe61e; z-index 속성<br>
+        요소 간의 겹쳐지는 순서 지정<br>
+        auto, 정수(큰 값일수록 앞에 위치. 음수 가능)<br><br>
+
+        <!--
+        <div class="pos1">position:static top:120px left:120px</div><br>
+        <div class="pos2">position:relative z-index:3 top:30px left:60px</div><br>
+        <div class="pos3">position:absolute z-index:2 top:120px right:150px</div><br>
+        <div class="pos4">position:absolute top:90px left:90px</div><br>
+        <div class="pos5">postion:fixed top:30px right:10px</div><br>
+        -->     
+
+        &#xe61e; 화면 표시: display 속성<br>
+        요소를 어떻게 표시할 지를 지정 &rarr; 사용할 박스의 종류<br>
+        none &rarr; 요소를 화면에 표시하지 않음<br>
+        inline &rarr; 요소를 인라인 요소로 취급(줄바꿈 미수행)<br>
+        block &rarr; 요소를 블록 요소로 취급(박스 앞뒤로 줄바꿈 수행)<br>
+        inline-block &rarr; 인라인 수준의 블록으로 취급(박스 자체는 인라인 박스, 내부는 블록 형식)<br>
+        list-item &rarr; 블록 박스를 목록의 항목과 같이 표시<br><br>
+
+
+        <span>첫 번째 span 요소</span>
+        <span class="disp">두 번째 span 요소</span>
+        <span class="disp">세 번째 span 요소</span>
+        <span>네 번째 span 요소</span>
+        <br><br>
+
+        &#xe61e; 화면 표시: overflow 속성<br>
+        콘텐츠가 요소 박스를 벗어나는 경우의 처리 방법 지정<br>
+        <b>height 속성</b>이 지정된 <b>블록 요소</b>에 대해서만 적용 가능<br>
+        visible, hidden, clip, scroll, auto<br><br>
+
+        &#x261e; overflow-x, overflow-y 속성<br>
+        &rarr;  수평 및 수직 방향으로 구분해서 오버플로의 처리 방법 지정<br><br>
+
+        &#xe61e; 화면 표시: visibility 속성<br>
+        요소 박스의 화면 표시 여부 지정<br>
+        visible<br> 
+        hidden &rarr; 화면에 표시하지 않지만, 페이지에서 원래의 공간은 그대로 차지<br> 
+        collapse &rarr; hidden과 동일. 단, 테이블 요소의 경우에는 행이나 열 제거<br><br>
+
+        &#xe61e; 플로팅: float 속성<br>
+        콘텐츠의 일반적인 흐름을 벗어나서 부모 요소 영역을 기준으로 해당 요소를 왼쪽/오른쪽에 배치하도록 지정<br>
+        none, left, right<br><br>
+
+        &#xe61e; 플로팅: clear 속성<br>
+        float 속성의 영향을 받은 요소의 흐름을 해제<br>
+        none, left, right, both<br><br>
+
+        float:left &rarr; clear:left or clear:both<br>
+        float:right &rarr; clear: right or claer:both<br><br>
+
+        <img class="float" src="crab.png" width="300">
+        <p>float 속성은 콘텐츠의 일반적인 흐름을 벗어나서.. </p>
+        <p class="clear">clear 속성은 float속성의 영향을 받은 요소의 흐름을 해제..</p>
+
+        &#xe61e; 박스의 크기: box-sizing 속성<br>
+        width/height 속성을 사용하여 요소의 폭과 높이를 지정할 때 패딩과 테두리를 포함시킬지의 여부 지정<br>
+        content-box &rarr; 오직 콘텐츠 영역만의 크기(패딩과 테두리 미포함)<br>
+        border-box &rarr; 패딩과 테두리를 모두 포함<br><br>
+
+        &#xe61e; 박스의 크기:resize 속성<br>
+        사용자가 요소 박스의 크기를 조절할 수 있도록 지정<br>
+        none, both(폭/높이), horizontal(폭), vertical(높이)<br>
+        "overflow: hidden/ scroll/ auto" 속성과 함꼐 사용해야 함<br><br>
+
+        <h2>2. 테두리</h2>
+        &#xe61e; border 관련 속성<br>
+        <table border="1">
+            <tr>
+                <th>속성</th><th>설명</th>                
+            </tr>
+            <tr>
+                <td>border-width</td>
+                <td>테두리의 굵기 지정<br>medium, thin, thick, 길이</td>
+            </tr>
+            <tr>
+                <td>border-style</td>
+                <td>테두리의 스타일 지정<br> none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset</td>
+            </tr>
+            <tr>
+                <td>border-color</td>
+                <td>테두리의 색상 지정<br>색상(검정), transparent</td>
+            </tr>
+            <tr>
+                <td>border</td>
+                <td>border-* 속성을 한꺼번에 지정<br>
+                    border-style속성값은 필수<br>
+                    방향별 속성: border-top-width:thin, border-right-width:medium, border-bottom-style:dashed, border-left-width:20px 등
+                </td>
+            </tr>
+        </table>
+        <br>
+
+        &#x261e; 속성값의 개수에 따른 적용 방향<br>
+        4 &rarr; 상 우 하 좌<br>
+        3 &rarr; 상 좌우 하<br>
+        2 &rarr; 상하 좌우<br>
+        1 &rarr; 상하좌우<br><br>
+
+        <div class="b1">테두리 일괄 지정</div>
+        <br><br>
+
+        &#xe61e; border-radius 속성<br>
+        요소 박스의 각 모서리를 둥글게 지정<br><br>
+
+        border-radius: x1, x2, x3, x4 / y1, y2, y3, y4;<br>
+        &rarr; (1)top-left (2)top-right (3)bottom-right (4)bottom-left<br><br>
+        
+        <div class="b-r1">border-radius</div>
+        <div class="b-r2">border-radius</div>
+        <div class="b-r3">border-radius</div>
+        <br><br>
+
+        &#xe61e; box-shadow 속성<br>
+        박스 요소에 그림자 스타일 지정<br>
+        none, 그림자<br><br>
+
+        &#x261e; 그림자<br>
+        수평위치: 0보다 크면 오른쪽 0보다 작으면 왼쪽<br>
+        수직위치: 0보다 크면 아래쪽 0보다 작으면 위쪽<br>
+        흐림정도: 블러링되는 정도<br> 
+        퍼진거리: 음수 가능<br>
+        색상: 기본은 검정색<br>
+        inset: 박스 내부(안쪽) 그림자로 지정<br><br>
+
+    </body>
+</html>        

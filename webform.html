@@ -17,6 +17,10 @@
             <li><a href="list_img_table.html">HTML: 리스트 이미지 테이블</a></li>
             <li><a href="media_semantic.html">HTML: 미디어 시멘틱</a></li>
             <li><a href="webform.html">HTML: 웹폼</a></li>
+            <li><a href="css_selector.html">CSS: 개요 선택자 색상</a></li>
+            <li><a href="css_pont+txt+list+table.html">CSS: 글꼴 텍스트 리스트 테이블</a></li>
+            <li><a href="css_box+border.html">CSS: 박스모델 테두리(1)</a></li>
+            <li><a href="css_box_2.html">css: 박스모델 테두리(2)</a></li>
         </ol>
         <hr>
         <h1>HTML요소: 웹 폼</h1>
@@ -169,7 +173,7 @@
         <input type="checkbox" name="subject" value="Algo" checked>알고리즘
         <br>
 
-        <h3>파일 선택</h3>     
+        <h3>(5) 파일 선택</h3>     
         자신의 시스템에 있는 파일을 선택하는 버튼 생성<br>
         &#x261e; input type="file"...<br><br>
         &#xe61e; 속성 <br>
@@ -185,7 +189,7 @@
             <input type="file" accept="image/*" multiple><br/><br/>
         </form>     
 
-        <h3>데이터 리스트에서의 선택</h3>
+        <h3>(6) 데이터 리스트에서의 선택</h3>
         주어진 데이터 옵션 리스트로부터 원하는 데이터 선택<br><br>
 
         &#x261e; select 요소<br> 
@@ -241,6 +245,196 @@
         </form>
         <br>
         
+        <h4>텍스트 타입에 대한 옵션 리스트: datalist요소</h4>
+        
+        input type="text" list="datalist_id"<br>
+        datalist id="datalist_id"..<br>
+        &nbsp;&nbsp;ption value="값"..<br>
+        &nbsp;&nbsp;option value="값"..<br>
+        &nbsp;&nbsp; ...<br>
+        &nbsp;&nbsp;option value="값"..<br>
+        /datalist <br><br>    
+
+        <input type="text" list="datalist_id">
+        <datalist id="datalist_id"..>>
+            <option value="값"..>
+            <option value="값"..>
+            ...
+            <option value="값"..>
+        </datalist>   
+        <br><br>
+        &#xe61e; 예시<br>
+        <h4>datalist요소</h4>
+        form <br>
+        &nbsp; p 웹 브라우저: <br>
+        &nbsp; input type="text" list="browsers" /p <br>
+        &nbsp; datalist id="browers" <br>
+        &nbsp;&nbsp; option value="엣지" <br>
+        &nbsp;&nbsp; option value="파이어폭스" <br>
+        &nbsp;&nbsp; option value="크롬" <br>                         
+        &nbsp;&nbsp; option value="오페라" <br>
+        &nbsp;&nbsp; option value="사파리" disabled <br>       
+        &nbsp; /datalist <br>  
+        /form <br><br>
+
+        <form>
+            <p>웹 브라우저:
+            <input type="text" list="browsers"></p>
+            <datalist id="browsers">
+                <option value="엣지">
+                <option value="파이어폭스">
+                <option value="크롬">                          
+                <option value="오페라">
+                <option value="사파리" disabled>       
+            </datalist>   
+        </form>
+
+        <h4>옵션을 그룹핑하는 optgroup요소</h4>
+        <h4>select요소- optgroup요소</h4>
+        form<br>
+        &nbsp; 과목<br/>
+        &nbsp; select name="subject" size="1"<br>
+        &nbsp;&nbsp; optgroup label="2학년 과목"<br>
+        &nbsp;&nbsp;&nbsp; option value="Java">Java프로그래밍/option<br>
+        &nbsp;&nbsp;&nbsp; option value="html"selected>HTML5 웹 프로그래밍/option<br>
+        &nbsp;&nbsp; /optgroup<br>
+        &nbsp;&nbsp; optgroup label="3학년 과목"<br>      
+        &nbsp;&nbsp;&nbsp; option value="algo"알고리즘/option<br>
+        &nbsp;&nbsp;&nbsp; option value="dc">디지털 논리회로/option<br>
+        &nbsp;&nbsp; /optgroup<br>
+        &nbsp;/select<br>
+        /form<br><br>
+
+        <form>
+            과목<br/>
+            <select name="subject" size="1">
+                <optgroup label="2학년 과목">
+                    <option value="Java">Java프로그래밍</option>
+                    <option value="html"selected>HTML5 웹 프로그래밍</option>
+                </optgroup>
+                <optgroup label="3학년 과목">      
+                    <option value="algo">알고리즘</option>
+                    <option value="dc">디지털 논리회로</option>
+                </optgroup>
+            </select>
+        </form>
+
+        <h3>(7) 색상 선택</h3>
+        <h4>색상 입력</h4>
+        form<br>
+        &nbsp; input type="color" name="color"<br>
+        /form<br><br>
+
+        <form>
+            <input type="color" name="color">
+        </form>
+
+        <h3>(8) 버튼 생성</h3>
+        input요소의 type 속성은 4가지 형태의 버튼 제공<br>
+        제출버튼(submit), 리셋버튼(reset), 이미지버튼(image), 일반버튼(button)<br>
+        value="버튼명" &rarr; 버튼 위에 표시되는 이름<br><br>
+
+        &#x261e;제출버튼 &rarr; input type="submit"<br>
+        입력한 데이터를 form요소의 <b>action속성</b>에서 지정한 서버로 전송<br>
+        기본 버튼명(value 속성 미사용) &rarr; "제출"(크롬의 경우)<br><br>
+        
+        &#x261e; 리셋버튼 &rarr; input type="reset"<br>
+        입력하고 있는 데이터를 모두 지우고 초기화<br>
+        기본 버튼명 &rarr; "초기화" (크롬의 경우)<br><br>
+
+        &#x261e; 이미지버튼 &rarr; input type="image"<br>
+        이미지를 사용해서 제출 버튼의 기능을 만들 때 사용<br>
+        속성 &rarr; src, width, height, alt<br><br>
+
+        &#x261e; 일반버튼 &rarr; input type="button"<br>
+        클릭을 통해 자바스크립트 코드를 수행하는 경우에 사용<br><br>
+
+        &#xe61e; button 요소<br>
+        button type="button/submit/reset" name="이름" value="초기값"<br>
+        &nbsp; 버튼 위에 표시될 텍스트나 이미지를 지정<br>
+        /button <br><br>
+
+        <button type="button/submit/reset" name="이름" value="초기값">
+            버튼 위에 표시될 텍스트나 이미지를 지정
+        </button>
+        <br>
+        <br>
+        &#xe61e; 예시<br>
+        <input type="submit" value="로그인"><br>
+        <input type="reset" value="다시 입력"><br>
+        <input type="image" src="crab.png" width="50" height="50" alt="제출버튼"><br>
+        <input type="button" value="클릭해보세요!" onClick="alert(안녕하세요!)"><br>
+        <br>
+        <button type="submit">
+            <img src="crab.png" width="50">
+        </button>
+        <br>
+        <button type="button">
+            클릭해 보세요!
+        </button>     
+        <br>
+
+        <h3>(9) 날짜 및 시간 선택</h3>
+        input type="____" .. <br>
+        date &rarr; 날짜(년,월,일)<br>
+        month &rarr; 년, 월<br>
+        week &rarr; 년, 주차<br>
+        time &rarr; 시간(시,분,초)<br>
+        datetime-local &rarr; 날짜, 시간<br><br>
+
+        &#x261e; 속성
+        min, max, step(입력값의 간격), value(초기값을 지정하거나 현재의 값을 나타냄) <br><br>
+
+        <h2>3. 기타 요소</h2>
+        <h3>폼 내의 값을 출력하는 output요소</h3>
+        폼 내의 다양한 값을 출력할 수 있도록 지정하는 요소<be></be>
+        특정 input요소에 입력된 값이 변하게 되면 그것을 곧바로 반영하여 화면에 출력할 때 사용<br><br>
+
+        input요소의 값이 변하면<br>
+        &rarr; form요소의 input 이벤트 발생<br>
+        &rarr; 이벤트에 대한 처리로서 자바스크립트 문법으로 출력할 값의 연산식을 지정<br><br>
+
+        <form oninput="out.value=(parseInt(a.vlaue)*parseInt(b.value))">
+            A<input type="number" id="a" min="1" max="50" value="10"/>
+            *
+            B<input type="number" id="b" min="1" max="100" value="20"/>
+            =<output name="out" for="a b"></output>
+        </form>
+        <br>
+        <h3>폼 요소와 캡션을 묶어주는 label요소</h3>
+        input요소에 대한 레이블을 정의<br>
+        시각적 효과는 없음. 단지 마우스 사용자의 사용성을 향상시킴<br>
+        label요소 내에 있는 텍스트(캡션)를 클릭<br>
+
+        <h3>폼 요소를 그룹핑하는 fieldset요소</h3>
+        폼에서 사용되는 관련 요소들을 그룹핑할 때 사용<br>
+        시각적으로 관련 요소들을 포함하는 사각형 테두리가 표시됨<br>
+        속성 &rarr; name, form, disabled<br><br>
+
+        &#x261e; legend요소<br>
+        fieldset요소의 하위 요소<br>
+        그룹핑되는 관련 요소들에 대한 캡션을 표시할 때 사용<br>
+        사각형 테두리 선상에 캡션이 표시됨<br>
+
+        <form>
+            <p><label>아이디:<input type="text" value="knou"></label></p>
+            <p><label>비밀번호:<input type="password"></label></p>
+            <fieldset>
+                <legend>성별</legend>
+                <label for="male">남자</label>
+                <input type="radio" id="male" naem="gender" value="male">
+                <label for="female">여자</label>
+                <input type="radio" id="female" name="gender" value="female" checked><br/>
+            </fieldset><br/>
+            <p><input type="sebmit" value="등록하기">&nbsp;&nbsp;
+               <input type="reset" value="취소하기"></p>
+        </form>
+
+
+
+
+
+
 
 
 
